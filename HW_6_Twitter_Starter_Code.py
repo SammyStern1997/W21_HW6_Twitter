@@ -202,7 +202,8 @@ def find_most_common_cooccurring_hashtag(tweet_data, hashtag_to_ignore):
     hash_dict = {}
 
     for tweet in tweet_data['statuses']:
-        tweet_list = tweet['text'].split()
+        t = tweet['text'].lower()
+        tweet_list = t.split()
         for word in tweet_list:
             if word[0] == '#':
                 if word not in hash_dict.keys() and word != hashtag_to_ignore:
